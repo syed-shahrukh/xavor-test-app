@@ -3,3 +3,17 @@
     width:100%;
     height: auto;
 }
+
+.greeting-statement{
+    margin-top: 70px;
+    margin-right: 10px;
+    width: 30%;
+    height: 30px;
+    float: right;
+    text-align: right;
+    display: block;
+
+}
+span{
+    margin-right: 10px;
+}

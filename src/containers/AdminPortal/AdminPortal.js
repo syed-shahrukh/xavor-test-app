@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import Aux from '../Auxilary/Auxilary';
 import Sidemenu from './SideMenu/SideMenu';
 import Navbar from '../Navbar/Navbar';
-import { Switch, Route} from 'react-router-dom';
+import { Switch, Route, Link} from 'react-router-dom';
+import { Breadcrumb } from 'react-bootstrap';
+import AdminHome from './AdminHome/AdminHome';
 import ManageSection from './ManageSection/ManageSection';
 import ManageQuestion from './ManageQuestion/ManageQuestion';
-import ManageCandidate from './ManageSection/ManageSection';
+import ManageCandidate from './ManageCandidate/ManageCandidate';
 import './AdminPortal.css';
 
 
@@ -16,7 +18,8 @@ class AdminPortal extends Component{
         this.setContentId = this.setContentId.bind(this);
     }
 
-  
+    
+
     state = {
         width: '0',
         marginLeft:'0px',
@@ -41,7 +44,17 @@ class AdminPortal extends Component{
     render(){
         return(
             <Aux>
-                <Navbar title="Admin Portal"/>
+                {console.log(window.location.href)}
+                <Navbar title="Admin Portal">
+                  
+                        <div className="greeting-statement">
+                        
+                        <span><b>Welcome, Admin</b></span>
+                                  
+                        <Link to="/account-type"><i className="fas fa-sign-out-alt"></i></Link>
+                                  
+                        </div>
+                </Navbar>
                 <Sidemenu width={this.state.width}
                     changeContent = {this.setContentId}
                 marginLeft={this.state.marginLeft}
@@ -53,10 +66,10 @@ class AdminPortal extends Component{
                 
                
                 <Switch>
-            <Route exact path={`/admin-portal/home/manage-sections`} component={ManageSection} />
-            
-            <Route exact path={`/admin-portal/home/manage-questions`} component={ManageQuestion} />
-            <Route exact path={`/admin-portal/home/manage-candidates`} component={ManageCandidate} />
+                    <Route exact path={`/admin-portal/home/`} component={AdminHome} />
+                    <Route exact path={`/admin-portal/home/manage-sections`} component={ManageSection} />
+                    <Route exact path={`/admin-portal/home/manage-questions`} component={ManageQuestion} />
+                    <Route exact path={`/admin-portal/home/manage-candidates`} component={ManageCandidate} />
             </Switch>
                 </div>
                 

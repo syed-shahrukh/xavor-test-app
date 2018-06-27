@@ -1,0 +1,10 @@
+.bread-crumb{
+    background-color: white;
+    width: 30%;
+    margin-left: 100px;
+    display: block;
+    text-align: left;
+}
+.active span{
+    color: #f4c12b;
+}

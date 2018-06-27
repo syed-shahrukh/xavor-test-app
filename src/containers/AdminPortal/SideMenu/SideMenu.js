@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './SideMenu.css';
 import Aux from '../../Auxilary/Auxilary';
-import { Link, StaticRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 
@@ -20,10 +20,10 @@ class Sidemenu extends Component{
             <Aux>
                 <div id="mySidenav" className="sidenav" style={{width: this.props.width}}>
                 
-                <Link to='manage-sections' className={this.state.activeKey === '1' ? "active" : ""} onClick={() => {this.setActiveKey('1')}} >Manage Sections</Link>
+                <Link to='manage-sections' className={this.state.activeKey === '1' ? "currentlyactive" : ""} onClick={() => {this.setActiveKey('1')}} >Manage Sections</Link>
                 
-                <Link  to="manage-questions" className={this.state.activeKey === '2' ? "active" : ""} onClick={() => {this.setActiveKey('2')}} >Manage Questions</Link>
-                <Link to="manage-candidates" className={this.state.activeKey === '3' ? "active" : ""} onClick={() => {this.setActiveKey('3')}} >Manage Candidates</Link>
+                <Link  to="manage-questions" className={this.state.activeKey === '2' ? "currentlyactive" : ""} onClick={() => {this.setActiveKey('2')}} >Manage Questions</Link>
+                <Link to="manage-candidates" className={this.state.activeKey === '3' ? "currentlyactive" : ""} onClick={() => {this.setActiveKey('3')}} >Manage Candidates</Link>
                 <Link to="settings" className={this.state.activeKey === '4' ? "active" : ""} onClick={() => {this.setActiveKey('4')}} >Settings</Link>
                 
                 </div>

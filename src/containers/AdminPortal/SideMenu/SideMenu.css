@@ -30,7 +30,7 @@
     transition-duration: 0.5s;
     transition-timing-function: ease-in;
 }
-.active {
+.currentlyactive {
     color: black;
     background-color: #f4c12b;
     
