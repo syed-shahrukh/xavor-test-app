@@ -1,0 +1,31 @@
+.add-button{
+    text-align: right;
+}
+
+.mandatory-note {
+    text-align: left;
+    padding-left: 5px;
+}
+
+.form-group {
+    display: block;
+    padding-left: 10px;
+    width: 100%;
+}
+
+.academic-info {
+    width: 100%;
+}
+.to-professional-button {
+    float: right;
+    margin-top: 1%;
+    margin-right: 2%;
+    width: 20%;
+}
+.academic-heading{
+    border-bottom: 2px solid black;
+    width: 100%;
+}
+.academic-modal{
+    width:25%;
+}
