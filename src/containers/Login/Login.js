@@ -17,6 +17,7 @@ class Login extends Component {
     return (
 
       <Aux>
+        
         <Navbar title="Welcome to Xavor Corporation" />
         <div className="row wrap">
           <div className="empty-parent-login">
@@ -35,7 +36,7 @@ class Login extends Component {
             <Form className="login-form">
               <div className="row">
                 <div className="col-md-12">
-                  <FormGroup bsSize="large" controlId="formInlineEmail" >
+                  <FormGroup bsSize="large"  >
                     <ControlLabel>Email</ControlLabel>{'    '}
                     <FormControl type="email" placeholder="jane.doe@example.com" />
                   </FormGroup>{' '}
@@ -52,7 +53,7 @@ class Login extends Component {
               </div>
             </Form>
             <div className="row">
-              <div class="col-md-12 button-container">
+              <div className="col-md-12 button-container">
                 <Button href="#" className="buttons" bsClass="xavor-style">Login</Button>
               </div>
             </div>
@@ -108,7 +109,7 @@ class Login extends Component {
               </div>
             </Form>
             <div className="row">
-              <div class="col-md-12">
+              <div className="col-md-12">
                 <Button className="buttons" bsClass="xavor-style" href="/signup">Signup</Button>
               </div>
             </div>
