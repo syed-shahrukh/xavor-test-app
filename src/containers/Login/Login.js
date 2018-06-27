@@ -53,7 +53,7 @@ class Login extends Component {
             </Form>
             <div className="row">
               <div class="col-md-12 button-container">
-                <Button href="/account-type" className="buttons" bsClass="xavor-style">Login</Button>
+                <Button href="#" className="buttons" bsClass="xavor-style">Login</Button>
               </div>
             </div>
         

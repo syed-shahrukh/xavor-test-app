@@ -16,10 +16,17 @@
 .sidenav a {
     padding: 8px 8px 8px 12px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 16px;
     color: black;
     display: block;
-    transition: 0.5s;
+    transition: all .25s ease-in;
+    background-image: linear-gradient(to left,
+                                      transparent,
+                                      transparent 50%,
+                                      #f4c12b 50%,
+                                      #f4c12b);
+                                      background-position: 100% 0;
+                                      background-size: 200% 100%;
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -27,17 +34,24 @@
     cursor: pointer;
     color: black;
     background-color: #f4c12b;
-    transition-duration: 0.5s;
-    transition-timing-function: ease-in;
+    background-position: 0 0;
+                    color:#333;
 }
 .currentlyactive {
     color: black;
     background-color: #f4c12b;
+    background-image: linear-gradient(to left,
+                                      transparent,
+                                      transparent 50%,
+                                      #f4c12b 50%,
+                                      #f4c12b);
+                                      background-position: 100% 0;
+                                      background-size: 200% 100%;
     
 }
 
 /* Position and style the close button (top right corner) */
-.sidenav .closebtn {
+.closebtn {
     position: absolute;
     top: 0;
     right: 25px;
