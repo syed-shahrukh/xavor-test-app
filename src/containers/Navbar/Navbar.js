@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
 import Logo from '../../images/xavor_logo.png';
 import './Navbar.css';
+import Aux from '../Auxilary/Auxilary';
 
 class Header extends Component {
     render(){
         return (
-            <div className="header">
-                    <img src={Logo} alt="company-logo"/>
-                    <span><b>{this.props.title}</b></span>
-                    {this.props.children}
-            </div>
+                <Aux>
+                    <div className="header-wrapper">
+                        <div className="image-container">
+                        <img className="company-logo" src={Logo} alt="company-logo"/>
+                        </div>
+                        <div className="header-content">
+                        <span><b>{this.props.title}</b></span>
+                        {this.props.children}
+                        </div>
+                    </div>
+                </Aux>
         );
     }
 }

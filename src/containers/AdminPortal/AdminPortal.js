@@ -3,7 +3,6 @@ import Aux from '../Auxilary/Auxilary';
 import Sidemenu from './SideMenu/SideMenu';
 import Navbar from '../Navbar/Navbar';
 import { Switch, Route, Link} from 'react-router-dom';
-import { Breadcrumb } from 'react-bootstrap';
 import AdminHome from './AdminHome/AdminHome';
 import ManageSection from './ManageSection/ManageSection';
 import ManageQuestion from './ManageQuestion/ManageQuestion';
@@ -18,10 +17,9 @@ class AdminPortal extends Component{
         this.setContentId = this.setContentId.bind(this);
     }
 
-    
 
     state = {
-        width: '0',
+      
         marginLeft:'0px',
         class:'',
         componentToLoad:'none',
@@ -37,15 +35,15 @@ class AdminPortal extends Component{
         return(
             <Aux>
             
-                <div id="top-bar">
+                
                 <Navbar title="Admin Portal">
                         <div className="greeting-statement">
                         <span><b>Welcome, Admin</b></span>
                         <Link to="/account-type"><i className="fas fa-sign-out-alt"></i></Link>   
                         </div>
                 </Navbar>
-                </div>
-                <Sidemenu width={this.state.width}
+               
+                <Sidemenu 
                     changeContent = {this.setContentId}
                 marginLeft={this.state.marginLeft}
                 class={this.state.class}
