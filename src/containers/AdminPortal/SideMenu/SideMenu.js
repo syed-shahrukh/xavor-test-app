@@ -18,7 +18,7 @@ class Sidemenu extends Component{
 
         return(
             <Aux>
-                <div id="mySidenav" className="sidenav" style={{width: this.props.width}}>
+                <div id="mySidenav" className="sidenav" >
                 
                 <Link to='manage-sections' className={this.state.activeKey === '1' ? "currentlyactive" : ""} onClick={() => {this.setActiveKey('1')}} >Manage Sections</Link>
                 
@@ -29,12 +29,6 @@ class Sidemenu extends Component{
                 </div>
 
                 {/*<!-- Use any element to open the sidenav -->*/}
-                <div id="nav-icon1" className={this.props.class} onClick={this.props.click} style={{marginLeft: this.props.marginLeft}} >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-
                 {/*<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->*/}
                 
                 

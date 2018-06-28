@@ -2,6 +2,9 @@ img {
   width:30px;
   height: 30px;
 }
+.wrap{
+  background-color: #F3F3F4;
+}
 .dialogue-title{
   border-bottom: 2px solid black;
 }
@@ -21,9 +24,10 @@ img {
     float: left;
     text-align: left;
     margin-left: 20%;
-    margin-top: 20%;  
+    margin-top: 10%;  
     padding-bottom: 1%;
     width: 50%;
+    background-color: white;
 }
 .login-form{
   padding-top: 30px;
@@ -33,7 +37,7 @@ img {
 
     display: block;
     position: fixed;
-    top: 30%;
+    top:20%;
     left: 50%;
     height: 500px;
     border-right: 2px solid black;
@@ -45,11 +49,12 @@ img {
   text-align: left;
   float: right;
   margin-right: 20%;
-  margin-top: 20%;
+  margin-top: 10%;
   padding-bottom: 1%;
   border: 2px solid black;
   padding-bottom: 1%;
     width: 50%;
+    background-color: white;
 }
 .empty-parent-login{
   width: 50%;

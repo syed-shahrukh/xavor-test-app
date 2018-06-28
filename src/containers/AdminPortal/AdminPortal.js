@@ -3,7 +3,6 @@ import Aux from '../Auxilary/Auxilary';
 import Sidemenu from './SideMenu/SideMenu';
 import Navbar from '../Navbar/Navbar';
 import { Switch, Route, Link} from 'react-router-dom';
-import { Breadcrumb } from 'react-bootstrap';
 import AdminHome from './AdminHome/AdminHome';
 import ManageSection from './ManageSection/ManageSection';
 import ManageQuestion from './ManageQuestion/ManageQuestion';
@@ -18,24 +17,15 @@ class AdminPortal extends Component{
         this.setContentId = this.setContentId.bind(this);
     }
 
-    
 
     state = {
-        width: '0',
+      
         marginLeft:'0px',
         class:'',
-        isOpen: false,
         componentToLoad:'none',
         key: 'undefined'
     }
-    openSidebar = () => {
-        if (this.state.isOpen === false){
-            this.setState({isOpen: true, width:'180px', marginLeft:'180px', class:'open'})
-        }
-        else{
-            this.setState({isOpen: false, width:'0px', marginLeft:'0px', class:''})
-        }
-    }
+   
     setContentId(newID){
       this.setState({key: newID}, () => {console.log(`The param value is ${newID}  Component in Admin Portal with id ${this.state.key} is loaded...`)});        
     }  
@@ -44,18 +34,16 @@ class AdminPortal extends Component{
     render(){
         return(
             <Aux>
-                {console.log(window.location.href)}
+            
+                
                 <Navbar title="Admin Portal">
-                  
                         <div className="greeting-statement">
-                        
                         <span><b>Welcome, Admin</b></span>
-                                  
-                        <Link to="/account-type"><i className="fas fa-sign-out-alt"></i></Link>
-                                  
+                        <Link to="/account-type"><i className="fas fa-sign-out-alt"></i></Link>   
                         </div>
                 </Navbar>
-                <Sidemenu width={this.state.width}
+               
+                <Sidemenu 
                     changeContent = {this.setContentId}
                 marginLeft={this.state.marginLeft}
                 class={this.state.class}
