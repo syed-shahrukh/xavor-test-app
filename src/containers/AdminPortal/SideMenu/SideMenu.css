@@ -3,7 +3,7 @@
     
     z-index: 1; /* Stay on top */
     float:left;
-    height: -webkit-fill-available;
+    height: -webkit-stretch;
     width:13%;
     background-color: white; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
@@ -32,7 +32,7 @@
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
     cursor: pointer;
-    color: black;
+    color: white;
     background-color: #f4c12b;
     background-position: 0 0;
                     color:#333;

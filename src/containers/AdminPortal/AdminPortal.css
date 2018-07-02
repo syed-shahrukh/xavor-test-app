@@ -1,8 +1,8 @@
 #main{
     float: right;
     width: 87%;
-    height:  -moz-available;          /* WebKit-based browsers will ignore this. */
-    height:  -webkit-fill-available;
+    height:  90vh;          /* WebKit-based browsers will ignore this. */
+    overflow: auto;
     background-color: #F3F3F4;
 }
 .bread-crumb{
@@ -14,9 +14,11 @@
     height: 40px;
 }
 .content-body{
-    background-color: #F3F3F4;
-    height:  -moz-available;          /* WebKit-based browsers will ignore this. */
-    height:  -webkit-fill-available;
+    background-color: white;
+    height:  fit-content;
+}
+.side-menu{
+    text-align: left;
 }
 .greeting-statement{
     float: right;
@@ -31,6 +33,7 @@ span{
 .admin-tools{
     height:40px;
     background-color: white;
+    border-bottom: 2px solid #F3F3F4;
 }
 .add-button{
     float: right;
@@ -80,4 +83,28 @@ span{
     background-image: none;
     border: 1px solid transparent;
     border-radius: 4px;
+}
+.table-action{
+    background-color: #f4c12b;
+    color:white;
+    margin-left: 1%;
+        display: inline-block;
+        padding: 2px 2px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 4px;
 }

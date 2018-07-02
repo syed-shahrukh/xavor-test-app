@@ -1,14 +1,45 @@
 import React, { Component } from 'react';
 import Aux from '../../Auxilary/Auxilary';
 import { Breadcrumb, Form, FormControl, Modal, Button, ControlLabel, FormGroup } from 'react-bootstrap';
+import ReactTable from 'react-table';
 import './ManageCandidate.css';
 
-
+const fakeData = [
+    { name: "name1", age: 50, address: "address1" },
+    { name: "name2", age: 20, address: "address2" },
+    { name: "name3", age: 70, address: "address3" }
+  ];
 
 class ManageCandidate extends Component{
     state = {
-        show: false
-    }
+        show: false,
+        columns: [
+          {
+            Header: "Name",
+            accessor: "name",
+            show: true
+          },
+          {
+            Header: "Age",
+            accessor: "age",
+            show: true
+          },
+          {
+            Header: "Address",
+            accessor: "address",
+            show: true
+          },
+          {
+            Header: "Action",
+            Cell: row => (
+              <div>
+                <button className="table-action" onClick={this.handleEditOperation}>Edit</button>
+                <button className="table-action" onClick={this.handleDeleteOperation}>Delete</button>
+              </div>
+            )
+          }
+        ]
+      };
     /***************************** Functions****************************************************** */
     handleClose = () => {
         this.setState({ show: false });
@@ -17,7 +48,12 @@ class ManageCandidate extends Component{
     handleShow = () => {
         this.setState({ show: true });
     }
-
+    handleDeleteOperation = () => {
+        console.log("Delete operation function has been called!!!");
+    }
+    handleEditOperation = () =>{
+        console.log("Edit operation function has been called!!!");
+    }
     /***************************** End of Functions****************************************************** */
     render(){
         return(
@@ -140,7 +176,7 @@ class ManageCandidate extends Component{
                                 <Modal.Footer>
                                     <section className="mandatory-note"><b>* All fields are mandatory</b></section>
                                     <Button onClick={this.handleClose}>Close</Button>
-                                    <Button bsClass="xavor-style" onClick={this.addRecord}>Save changes</Button>
+                                    <Button bsClass="table-action" onClick={this.addRecord}>Save changes</Button>
 
                                 </Modal.Footer>
                             </Modal>
@@ -150,12 +186,15 @@ class ManageCandidate extends Component{
                         <form>
                             <input className="search-box" name="search" placeholder="Search..."/>
                             <button className="search-button">
-                                <i class="fas fa-search"></i>
+                                <i className="fas fa-search"></i>
                             
                             </button>
                         </form>
                     </div>
                     {/****************************************Search Bar*************************************/}
+                    </div>
+                    <div className="tabular-data">
+                        <ReactTable data={fakeData} minRows={0} columns={this.state.columns} />
                     </div>
                 </div>
                 
