@@ -19,7 +19,7 @@ class App extends Component {
           <Route path="/" exact component={Login} />
           <Route path="/signup" exact component={Signup} />
           
-           <Route path={"/admin-portal/home"} component={AdminPortal}/>
+           <Route path={"/admin-portal/home/"} component={AdminPortal}/>
             
             
           
