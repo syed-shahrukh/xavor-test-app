@@ -5,3 +5,16 @@
 .fields{
     padding-bottom: 10px;
 }
+.add-answer{
+    text-align: right;
+}
+.modal-container {
+    position: relative;
+  }
+  .modal-container .modal, .modal-container .modal-backdrop {
+    position: absolute;
+  }
+.add-answer-modal{
+    margin-top:25%;
+    width:30%;
+}

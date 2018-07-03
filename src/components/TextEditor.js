@@ -8,7 +8,7 @@ import 'bootstrap/dist/js/bootstrap.bundle';
  
 class RichTextEditor extends Component {
   onChange(content) {
-    console.log('onChange', content);
+    console.log('onChange: ' + content);
   }
  
   render() {
@@ -16,7 +16,7 @@ class RichTextEditor extends Component {
       <ReactSummernote
         value="Default value"
         options={{
-          height: 350,
+          height: 150,
           dialogsInBody: true,
           toolbar: [
             ['style', ['style']],
@@ -26,7 +26,10 @@ class RichTextEditor extends Component {
             ['table', ['table']],
             ['insert', ['link', 'picture', 'video']],
             ['view', ['fullscreen', 'codeview']]
-          ]
+          ],
+          codemirror: {
+            theme: 'monokai'
+          }
         
         }}
         onChange={this.onChange}
