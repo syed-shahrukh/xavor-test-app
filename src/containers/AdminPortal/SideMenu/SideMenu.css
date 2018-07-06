@@ -7,7 +7,7 @@
     width:13%;
     background-color: white; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
-     /* Place content 60px from the top */
+    text-align: left; /* Place content 60px from the top */
     
 }
 

@@ -8,6 +8,7 @@ import AddQuestion from './ManageQuestion/AddQuestion/AddQuestion';
 import ManageSection from './ManageSection/ManageSection';
 import ManageQuestion from './ManageQuestion/ManageQuestion';
 import ManageCandidate from './ManageCandidate/ManageCandidate';
+import CandidateDetails from './ManageCandidate/CandidateDetails/CandidateDetails';
 import './AdminPortal.css';
 
 
@@ -58,7 +59,9 @@ class AdminPortal extends Component{
                     <Route exact path={`/admin-portal/home/manage-sections/`} component={ManageSection} />
                     <Route exact path={`/admin-portal/home/manage-questions/`} component={ManageQuestion} />
                     <Route exact path={`/admin-portal/home/manage-candidates/`} component={ManageCandidate} />
+                    <Route exact path={`/admin-portal/home/manage-candidates/candidate-details/`} component={CandidateDetails} />
                     <Route exact path={`/admin-portal/home/manage-questions/add-question/`} component={AddQuestion} />
+                    
             </Switch>
                 </div>
                 

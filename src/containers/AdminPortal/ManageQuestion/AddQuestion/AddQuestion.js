@@ -21,19 +21,23 @@ class AddQuestion extends Component {
   state = {
     show: false,
     graphic_content: false,
+    headerClassName: "table-header-grid",
     columns: [
       {
         Header: "Answer Text",
         accessor: "statement",
+        headerClassName: "table-header-grid",
         show: true
       },
       {
         Header: "Is answer?",
         accessor: "answer",
+        headerClassName: "table-header-grid",
         show: true
       },
       {
         Header: "Action",
+        headerClassName: "table-header-grid",
         Cell: row => (
           <div>
             <button className="table-action" onClick={this.handleEditOperation}>Edit</button>
@@ -160,7 +164,7 @@ handleEditOperation = () =>{
              {/*********************** Answers Table***************************************/}
              <div className="row ">
              <div className="col-md-6">
-             <ReactTable data={fakeData} minRows={0} columns={this.state.columns} />
+             <ReactTable data={fakeData} className="table-grid" minRows={0} columns={this.state.columns} />
              <Modal dialogClassName="add-answer-modal" bsSize= "small"show={this.state.show} onHide={this.handleClose} >
           <Modal.Header closeButton>
             <Modal.Title>Modal heading</Modal.Title>

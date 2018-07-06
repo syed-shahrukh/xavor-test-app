@@ -94,7 +94,7 @@ class GeneralInfo extends Component {
     return (
       <Aux>
       <div className="tab-heading">
-        <h3>Tell us a bit about yourself</h3>
+        <h4>Tell us a bit about yourself</h4>
       </div>
       
       <Form className="general-info">
@@ -104,11 +104,11 @@ class GeneralInfo extends Component {
           className="form-group"
         >
           {/*Name, Fathers Name and CNIC**************************************************************************/}
-          <div className="container-fluid">
+          <div className="container-fluid general-info-container">
           <div className="row">
             <div className="col-md-4">
               <div>
-                <ControlLabel>Name (as per NIC)</ControlLabel>
+                <ControlLabel>* Name (as per NIC)</ControlLabel>
               </div>
               <FormControl
                 name="name"
@@ -120,7 +120,7 @@ class GeneralInfo extends Component {
 
             <div className="col-md-4">
               <div>
-                <ControlLabel>Father/Husband's Name</ControlLabel>
+                <ControlLabel>* Father/Husband's Name</ControlLabel>
                 {"     "}
               </div>
               <FormControl
@@ -133,7 +133,7 @@ class GeneralInfo extends Component {
 
             <div className="col-md-4">
               <div>
-                <ControlLabel>CNIC No.</ControlLabel>
+                <ControlLabel>* CNIC No.</ControlLabel>
                 {"     "}
               </div>
               <FormControl
@@ -197,21 +197,10 @@ class GeneralInfo extends Component {
           </div>
           {/*Email, Mobile and Home Phone**************************************************************************/}
           <div className="row">
+          
             <div className="col-md-4">
               <div>
-                <ControlLabel>Email</ControlLabel>
-              </div>
-              <FormControl
-                name="email"
-                onChange={this.fillValues}
-                type="email"
-                placeholder="example@example.com"
-              />
-            </div>
-
-            <div className="col-md-4">
-              <div>
-                <ControlLabel>Mobile Phone</ControlLabel>
+                <ControlLabel>* Mobile Phone</ControlLabel>
                 {"     "}
               </div>
               <FormControl
@@ -235,12 +224,29 @@ class GeneralInfo extends Component {
                 placeholder="xxxxx-xxxxxxx-x"
               />
             </div>
+
+            <div className="col-md-4">
+            <div>
+              <ControlLabel>Position applying for</ControlLabel>
+            </div>
+            <FormControl
+              name="position"
+              componentClass="select"
+              placeholder="Select"
+              onChange={this.fillValues}
+            >
+              <option value="software">Software Engineer</option>
+              <option value="qualityassurance">
+                Quality Assurance Engineer
+              </option>
+            </FormControl>
+          </div>
           </div>
           {/*Current Address and Permanent Address**************************************************************************/}
           <div className="row">
             <div className="col-md-8">
               <div>
-                <ControlLabel>Current Address</ControlLabel>
+                <ControlLabel>* Current Address</ControlLabel>
               </div>
               <FormControl
                 name="curr-address"
@@ -253,7 +259,7 @@ class GeneralInfo extends Component {
           <div className="row">
             <div className="col-md-8">
               <div>
-                <ControlLabel>Permanent Address</ControlLabel>
+                <ControlLabel>* Permanent Address</ControlLabel>
               </div>
               <FormControl
                 name="permanent-address"
@@ -263,74 +269,17 @@ class GeneralInfo extends Component {
               />
             </div>
           </div>
-          {/*Position Applying for, Expected Salary and Part/Full time**************************************************************************/}
-          <div className="row">
-            <div className="col-md-4">
-              <div>
-                <ControlLabel>Position applying for</ControlLabel>
-              </div>
-              <FormControl
-                name="position"
-                componentClass="select"
-                placeholder="Select"
-                onChange={this.fillValues}
-              >
-                <option value="software">Software Engineer</option>
-                <option value="qualityassurance">
-                  Quality Assurance Engineer
-                </option>
-              </FormControl>
-            </div>
 
-            <div className="col-md-4">
-              <div>
-                <ControlLabel>Expected Salary</ControlLabel>
-              </div>
-              <FormControl
-                name="expected-salary"
-                type="number"
-                placeholder="Currency in PKR"
-                bsClass="input-length"
-                onChange={this.fillValues}
-              />{'    '}<b>PKR</b>
-            </div>
-
-            <div className="col-md-4">
-              <div>
-                <ControlLabel>Employment Desired</ControlLabel>
-              </div>
-              <FormControl
-                name="employment-desired"
-                componentClass="select"
-                placeholder="Select"
-                onChange={this.fillValues}
-              >
-                <option value="fulltime">Full Time</option>
-                <option value="parttime">Part Time</option>
-              </FormControl>
-            </div>
-          </div>
-          {/*Possible Joining Date and Next Button**************************************************************************/}
-          <div className="row" >
-            <div className="col-md-4 joining">
-            <div>
-              <ControlLabel>How soon can you join?</ControlLabel>
-            </div>
-            <FormControl
-              name="joining"
-              type="number"
-              bsClass="input-length"
-              placeholder="Please specify number"
-              onChange={this.fillValues}
-            />{'    '}<b>Weeks</b>
-            </div>
-           
-          </div>
           {/*All fields are mandatory**************************************************************************/}
+          <div className="row general-info-footer">
+          <div className="col-md-6 ">
+            <section className="mandatory-note">
+            <b>Note: All fields marked with * mandatory</b>
+            </section>
+            </div>
+            <div className="col-md-6">
           <Button className="to-academic-button" bsClass="xavor-style" onClick={this.props.click}>Next</Button>
-          <div className="mandatory-note">
-            <b>* All fields are mandatory</b>
-            
+          </div>
           </div>
           </div>
         </FormGroup>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Aux from '../../Auxilary/Auxilary';
-import { Breadcrumb } from 'react-bootstrap';
+import { Breadcrumb, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import ReactTable from 'react-table';
@@ -30,29 +30,32 @@ class ManageQuestion extends Component{
         columns: [
           {
             Header: "Question Statement",
+            headerClassName: "table-header-grid",
             accessor: "statement",
             show: true
           },
           {
             Header: "Section",
             accessor: "section",
+            headerClassName: "table-header-grid",
             show: true
           },
           {
             Header: "Details",
+            headerClassName: "table-header-grid",
             Cell: row => (
                 <div>
-                  <button className="table-action" onClick={this.handleEditOperation}>View</button>
-             
+                  <Button bsStyle="link" onClick={this.handleEditOperation}>View</Button>             
                 </div>
               )
           },
           {
             Header: "Action",
+            headerClassName: "table-header-grid",
             Cell: row => (
               <div>
-                <button className="table-action" onClick={this.handleEditOperation}>Edit</button>
-                <button className="table-action" onClick={this.handleDeleteOperation}>Delete</button>
+                <Button bsStyle="link" onClick={this.handleEditOperation}>Edit</Button>
+                <Button bsStyle="link" onClick={this.handleDeleteOperation}>Delete</Button>
               </div>
             )
           }
@@ -82,7 +85,7 @@ class ManageQuestion extends Component{
             
                     <Breadcrumb.Item href="/admin-portal/home/">Home</Breadcrumb.Item>
                     <Breadcrumb.Item href="/admin-portal/home/manage-questions">Manage Questions</Breadcrumb.Item>
-                    <Breadcrumb.Item active href="/admin-portal/home/manage-questions">Add Question</Breadcrumb.Item>
+                    <Breadcrumb.Item className="current-node" active href="/admin-portal/home/manage-questions">Add Question</Breadcrumb.Item>
                 </Breadcrumb>
                 <div className="content-body">
                     <div className="admin-tools">
@@ -104,7 +107,7 @@ class ManageQuestion extends Component{
                     </div>
                    
                     <div className="tabular-data">
-                        <ReactTable data={fakeData} minRows={0} columns={this.state.columns} />
+                        <ReactTable className="table-grid" data={fakeData} minRows={0} columns={this.state.columns} />
                     </div>
                 </div>
             </Aux>

@@ -10,7 +10,7 @@ class ManageSection extends Component{
         return(
             <Aux>
                 <Breadcrumb className="bread-crumb">
-                    <Breadcrumb.Item active href="/admin-portal/home/">Home</Breadcrumb.Item>
+                    <Breadcrumb.Item className="current-node" active href="/admin-portal/home/">Home</Breadcrumb.Item>
                 </Breadcrumb>
                 <h1>Welcome to Admin Home</h1>
                 

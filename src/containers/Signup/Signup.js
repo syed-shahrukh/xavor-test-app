@@ -30,7 +30,7 @@ class Signup extends Component {
             <Aux>
 
                 <Navbar title="Register yourself to become a part of Xavor Family" />
-                <h2> Signup Form </h2>
+                <h4> Signup Form </h4>
 
                 <Tabs className="generic-tab"
                     activeKey={this.state.key}

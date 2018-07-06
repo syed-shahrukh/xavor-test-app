@@ -107,65 +107,79 @@ class ProfessionalInfo extends Component {
         /*********************************************Columns/Headings****************************************************/ 
         const columns = [{
             Header: "Employment Date",
+            headerClassName: "table-header-grid",
             accessor: "fromdate"
         },
         {
           Header: "Duratoin",
+          headerClassName: "table-header-grid",
           accessor: "todate"
         },
         {
             Header: "Employer/Company",
+            headerClassName: "table-header-grid",
             accessor: "todate"
         },
         {
             Header: "Salary",
+            headerClassName: "table-header-grid",
             columns: [
                 {
                     Header: "Starting",
+                    headerClassName: "table-header-grid",
                     accessor: "salarystart"
                 },
                 {
                     Header: "Final",
+                    headerClassName: "table-header-grid",
                     accessor: "salaryfinal"
                 }
             ]
         },
         {
             Header: 'Job Title',
+            headerClassName: "table-header-grid",
             accessor: 'jobtitle'
         },
         {
             Header: 'Reason for Leaving',
+            headerClassName: "table-header-grid",
             accessor: 'reasonleave',
 
         },
         {
             Header: 'Action',
+            headerClassName: "table-header-grid",
             accessor: 'del'
         }
         ]
         return (
             <Aux>
-                    <div className="container-fluid">
+                    <div className="professional-wrap">
                     <div className="professional-heading">
-                    <h3>Complete List. Starting from Most Recent</h3>
+                    <div className="heading-title">
+                    <h5>Complete List. Starting from Most Recent</h5>
                     </div>
-                    <div className="add-button">
-                        <h4>
-                            <span className="glyphicon glyphicon-plus"></span>
-                            <a onClick={this.handleShow}>  Add a new record...</a>
+
+                    <div className="add-record-button">
+                        <span className="glyphicon glyphicon-plus"></span>
+                        <a onClick={this.handleShow}>  Add a new record</a>
+                    </div>
+                    </div>
+
+                         
                             <Modal dialogClassName="professional-modal" className="Popup" show={this.state.show} onHide={this.handleClose}>
                                 <Modal.Header closeButton>
-                                    <Modal.Title><b>Add new record...</b></Modal.Title>
+                                    <Modal.Title><b>Add new record</b></Modal.Title>
                                 </Modal.Header>
                                 <Modal.Body>
-                                    
+                                <div className="container-fluid professional-modal-body">
                                     <Form className="professional-info">
                                         <FormGroup controlId="formBasicText">
                                             <div className="row">
-                                                <div className="col-md-4">
+                                                <div className="col-md-4 modal-field-professional">
                                                     <div>
-                                                        <ControlLabel>Name of Employer</ControlLabel>{' '}
+                                                        <ControlLabel>* Name of Employer</ControlLabel>{' '}
                                                     </div>
                                                     <FormControl
                                                         name="employer"
@@ -175,9 +189,9 @@ class ProfessionalInfo extends Component {
                                                     />
                                                 </div>
                                                 
-                                                <div className="col-md-4">
+                                                <div className="col-md-4 modal-field-professional">
                                                     <div>
-                                                        <ControlLabel>Job Title</ControlLabel>
+                                                        <ControlLabel>* Job Title</ControlLabel>
                                                         {"     "}
                                                     </div>
                                                     <FormControl
@@ -190,9 +204,9 @@ class ProfessionalInfo extends Component {
                                             </div>
 
                                             <div className="row">
-                                                <div className="col-md-4">
+                                                <div className="col-md-4 modal-field-professional">
                                                     <div>
-                                                        <ControlLabel>Emmployment Date</ControlLabel>{' '}
+                                                        <ControlLabel>* Employment Date</ControlLabel>{' '}
                                                     </div>
                                                     <FormControl
                                                         name="fromdate"
@@ -202,7 +216,7 @@ class ProfessionalInfo extends Component {
                                                     />
                                                 </div>
                                                 
-                                                <div className="col-md-4">
+                                                <div className="col-md-4 modal-field-professional">
                                                     <div>
                                                         <ControlLabel>Duration (Months)</ControlLabel>
                                                         {"     "}
@@ -223,7 +237,7 @@ class ProfessionalInfo extends Component {
 
 
                                             <div className="row">
-                                                <div className="col-md-4">
+                                                <div className="col-md-4 modal-field-professional">
                                                     <div>
                                                         <ControlLabel>Salary (Optional) Start</ControlLabel>{' '}
                                                     </div>
@@ -234,11 +248,11 @@ class ProfessionalInfo extends Component {
                                                         bsClass="input-length"
                                                         onChange={this.fillValues}
 
-                                                    />{'  '}<b>PKR</b>
+                                                    />{'  '}<b className="salary-field">PKR</b>
                                                 </div>
-                                                <div className="col-md-4">
+                                                <div className="col-md-4 modal-field-professional">
                                                     <div>
-                                                        <ControlLabel>Salary Final</ControlLabel>
+                                                        <ControlLabel>*Salary Final</ControlLabel>
                                                         {"     "}
                                                     </div>
                                                     <FormControl
@@ -247,7 +261,7 @@ class ProfessionalInfo extends Component {
                                                         placeholder="Specify"
                                                         bsClass="input-length"
                                                         onChange={this.fillValues}
-                                                    />{' '}<b>PKR</b>
+                                                    />{' '}<b className="salary-field">PKR</b>
                                                 </div>
                                             </div>
 
@@ -255,7 +269,7 @@ class ProfessionalInfo extends Component {
 
 
                                             <div className="row">
-                                                <div className="col-md-8">
+                                                <div className="col-md-8 modal-field-professional">
                                                     <div>
                                                         <ControlLabel>Address</ControlLabel>{' '}
                                                     </div>
@@ -268,7 +282,7 @@ class ProfessionalInfo extends Component {
                                                     />
                                                 </div>
 
-                                                <div className="col-md-8">
+                                                <div className="col-md-8 modal-field-professional">
                                                     <div>
                                                         <ControlLabel>Reason for Leaving</ControlLabel>
                                                         {"     "}
@@ -285,7 +299,7 @@ class ProfessionalInfo extends Component {
 
 
                                             <div className="row">
-                                                <div className="col-md-12">
+                                                <div className="col-md-12 modal-field-professional">
                                                     <div>
                                                         <ControlLabel>List the duties you performed, skills you used or learned, support or supervisory positions held and promotions</ControlLabel>{' '}
                                                     </div>
@@ -306,19 +320,20 @@ class ProfessionalInfo extends Component {
                                     
 
 
-
-
-
+                                    <div className="row">
+                                    <div className="col-md-6">
+                                <section className="mandatory-note"><b>* All fields are mandatory</b></section>
+                                </div>
+                                <div className="professional-save-button-container">
+                                <Button bsClass="normal-style-small" onClick={this.handleClose}>Cancel</Button>
+                                <Button bsClass="xavor-style-small" onClick={this.addRecord}>Save</Button>
+                                </div>
+                                </div>
+                                    </div>
                                 </Modal.Body>
-                                <Modal.Footer>
-                                    <section className="mandatory-note"><b>* All fields are mandatory</b></section>
-                                    <Button onClick={this.handleClose}>Close</Button>
-                                    <Button bsClass="xavor-style" onClick={this.addRecord}>Save changes</Button>
-
-                                </Modal.Footer>
                             </Modal>
-                        </h4>
-                    </div>
+                           
+                    <div className="container-fluid">
                     <ReactTable
                         className="data-table"
                         data={this.state.records}
@@ -329,11 +344,13 @@ class ProfessionalInfo extends Component {
                         <Button className="to-references-button" bsClass="xavor-style" onClick={this.props.click}>Next</Button>
                         <Button className="to-previous" bsClass="xavor-style" onClick={this.props.prev}>Previous</Button>
                     </div>
+
                     </div>
+                    
 
             
 
-
+                    </div>
             </Aux>
 
         );

@@ -27,9 +27,7 @@ span{
     margin-right: 10px;
     margin-left: 5px;
 }
-.search-bar{
-    float: right;
-}
+
 .admin-tools{
     height:40px;
     background-color: white;
@@ -41,9 +39,9 @@ span{
     margin-top: 10px;
 }
 .search-bar{
-    float:right;
-    margin-right: 20px;
-    width: 30%;
+    float: right;
+
+    width: auto;
     margin-top:5px;
 }
 .search-box{
@@ -65,7 +63,7 @@ span{
 .search-button{
     height: 30px;
     padding: 6px 10px;
-    margin-bottom: 0;
+    margin-bottom: 3px;
     margin-left:1px;
     font-size: 14px;
     font-weight: 400;
@@ -107,4 +105,11 @@ span{
         background-image: none;
         border: 1px solid transparent;
         border-radius: 4px;
+}
+.table-grid{
+    text-align: left;
+}
+.table-header-grid{
+    text-align: left;
+    font-weight: bold;
 }

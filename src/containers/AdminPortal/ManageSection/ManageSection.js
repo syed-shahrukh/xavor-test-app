@@ -16,22 +16,26 @@ class ManageSection extends Component {
     state = {
         show: false,
         columns: [
+            
           {
             Header: "Section Name",
             accessor: "name",
+            headerClassName: "table-header-grid",
             show: true
           },
           {
             Header: "Description",
             accessor: "description",
+            headerClassName: "table-header-grid",
             show: true
           },
           {
             Header: "Action",
+            headerClassName: "table-header-grid",
             Cell: row => (
               <div>
-                <button className="table-action" onClick={this.handleEditOperation}>Edit</button>
-                <button className="table-action" onClick={this.handleDeleteOperation}>Delete</button>
+                <Button bsStyle="link" onClick={this.handleEditOperation}>Edit</Button>
+                <Button bsStyle="link" onClick={this.handleDeleteOperation}>Delete</Button>
               </div>
             )
           }
@@ -57,7 +61,7 @@ class ManageSection extends Component {
             <Aux>
                 <Breadcrumb className="bread-crumb">
                     <Breadcrumb.Item href="/admin-portal/home/">Home</Breadcrumb.Item>
-                    <Breadcrumb.Item active href="/admin-portal/home/manage-sections">Manage Sections</Breadcrumb.Item>
+                    <Breadcrumb.Item className="current-node" active href="/admin-portal/home/manage-sections">Manage Sections</Breadcrumb.Item>
                 </Breadcrumb>
                 <div className="content-body">
                     <div className="admin-tools">
@@ -66,7 +70,7 @@ class ManageSection extends Component {
                             <a onClick={this.handleShow}>  Add a new section...</a>
                             <Modal dialogClassName="section-modal" bsSize="large" className="Popup" show={this.state.show} onHide={this.handleClose}>
                                 <Modal.Header closeButton>
-                                    <Modal.Title><b>Add new section...</b></Modal.Title>
+                                    <Modal.Title><b>Add new section</b></Modal.Title>
                                 </Modal.Header>
                                 <Modal.Body>
                                     <div className="container-fluid">
@@ -123,6 +127,15 @@ class ManageSection extends Component {
                                             </FormGroup>
 
                                         </Form>
+                                        <div className="row">
+                                        
+                                        <div className="col-md-6">
+                                        <section className="mandatory-note"><b>* All fields are mandatory</b></section>
+                                        </div>
+                                        <div className="col-md-6 ">
+                                        <Button bsClass="xavor-style save-button" onClick={this.handleClose}>Save changes</Button>
+                                        </div>
+                                        </div>
                                     </div>
 
 
@@ -130,12 +143,6 @@ class ManageSection extends Component {
 
 
                                 </Modal.Body>
-                                <Modal.Footer>
-                                    <section className="mandatory-note"><b>* All fields are mandatory</b></section>
-                                    <Button onClick={this.handleClose}>Close</Button>
-                                    <Button bsClass="xavor-style" onClick={this.handleClose}>Save changes</Button>
-
-                                </Modal.Footer>
                             </Modal>
                     </div>
                      {/****************************************Search Bar*************************************/}
@@ -143,7 +150,7 @@ class ManageSection extends Component {
                         <form>
                             <input className="search-box" name="search" placeholder="Search..."/>
                             <button className="search-button">
-                                <i class="fas fa-search"></i>
+                                <i className="fas fa-search"></i>
                             
                             </button>
                         </form>
@@ -151,7 +158,11 @@ class ManageSection extends Component {
                     {/****************************************Search Bar*************************************/}
                     </div>
                     <div className="tabular-data">
-                        <ReactTable data={fakeData} minRows={0} columns={this.state.columns} />
+                        <ReactTable 
+                        className="table-grid"
+                         data={fakeData}
+                          minRows={0}
+                           columns={this.state.columns} />
                     </div>
                 </div>
             </Aux>
