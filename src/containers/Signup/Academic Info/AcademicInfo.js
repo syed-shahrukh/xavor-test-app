@@ -18,7 +18,7 @@ class AcademicInfo extends Component {
             subject: '',
             fromdate: '',
             todate: '',
-            major: '',
+        
             degree: '',
             grades: '',
             del: false 
@@ -28,7 +28,6 @@ class AcademicInfo extends Component {
             subject: 26,
             fromdate: '0-22-95',
             todate: '12-5-2007',
-            major: 'web development',
             degree: 'cs',
             grades: '3.5',
             del: false
@@ -96,66 +95,85 @@ class AcademicInfo extends Component {
         /*********************************************Columns/Headings****************************************************/ 
         const columns = [{
             Header: 'Name of Institute',
+            headerClassName: "table-header-grid",
             accessor: 'institute' // String-based value accessors!
         }, {
             Header: 'Subject',
+            headerClassName: "table-header-grid",
             accessor: 'subject',
             Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
         }, {
             Header: "Tenure",
+            headerClassName: "table-header-grid",
             columns: [
                 {
                     Header: "From",
+                    headerClassName: "table-header-grid",
                     accessor: "fromdate"
                 },
                 {
                     Header: "To",
+                    headerClassName: "table-header-grid",
                     accessor: "todate"
                 }
             ]
         },
+        
         {
-            Header: 'Major',
-            accessor: 'major'
-        },
-        {
-            Header: 'Degree',
+            Header: 'Major/Degree',
+            headerClassName: "table-header-grid",
             accessor: 'degree',
 
         },
         {
             Header: 'Grades',
+            headerClassName: "table-header-grid",
             accessor: 'grades',
             Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
         },
         {
             Header: 'Action',
-            accessor: 'del'
+            headerClassName: "table-header-grid",
+            accessor: 'del',
+            Cell: row => (
+                <div>
+                    <Button bsClass="action-link-buttons" bsStyle="link">Edit</Button> | 
+                    <Button bsClass="action-link-buttons" >Remove</Button>             
+                </div>
+              )
         }
         ]
         return (
             <Aux>
+                <div className="academic-wrap">
                 <div className="academic-heading">
-                <h3>Complete List. Starting from Most Recent</h3>
+                <div className="heading-title">
+                <h5>Complete List. Starting from Most Recent</h5>
                 </div>
+    
+                <div className="add-record-button">
+                    <span className="glyphicon glyphicon-plus"></span>
+                    <a onClick={this.handleShow}>  Add a new record</a>
+                </div>
+                </div>
+
+
                 <div className="container-fluid">
-                    <div className="add-button">
-                        <h4>
-                            <span className="glyphicon glyphicon-plus"></span>
-                            <a onClick={this.handleShow}>  Add a new record...</a>
+                        
+                           
                             <Modal dialogClassName="academic-modal" bsSize="large" className="Popup" show={this.state.show} onHide={this.handleClose}>
-                                <Modal.Header closeButton>
-                                    <Modal.Title><b>Add new record...</b></Modal.Title>
+                                <Modal.Header className="academic-modal-header" closeButton>
+                                    <Modal.Title><b>Add new record</b></Modal.Title>
                                 </Modal.Header>
                                 <Modal.Body>
-                                <div className="container-fluid">
+                                <div className="container-fluid academic-modal-body">
                                 <Form className="academic-info">
                                     <FormGroup controlId="formBasicText">
                                     
                                         <div className="row">
-                                            <div className="col-md-6">
+                                            <div className="col-md-6 modal-field">
                                                 <div>
-                                                    <ControlLabel>Name of Institute</ControlLabel>{' '}
+                                                    <ControlLabel>* Name of Institute</ControlLabel>{' '}
                                                 </div>
                                                 <FormControl
                                                     name="institute"
@@ -164,24 +182,25 @@ class AcademicInfo extends Component {
                                                     onChange = {this.fillValues}
                                                 />    
                                             </div>
-                                            <div className="col-md-6">
+                                            <div className="col-md-6 modal-field">
                                             <div>
-                                                <ControlLabel>Subject</ControlLabel>
-                                                {"     "}
+                                                <ControlLabel>* Major</ControlLabel>{' '}
                                             </div>
                                             <FormControl
-                                                name="subject"
+                                                name="major"
                                                 type="text"
-                                                placeholder="Example: Engineering"
+                                                placeholder="Please Specify"
                                                 onChange = {this.fillValues}
-                                            />
-                                            </div>
+
+                                            />    
+                                        </div>
+                                          
                                         </div>
 
                                         <div className="row">
-                                            <div className="col-md-6">
+                                            <div className="col-md-6 modal-field">
                                                 <div>
-                                                    <ControlLabel>From</ControlLabel>{' '}
+                                                    <ControlLabel>* Year Enrolled</ControlLabel>{' '}
                                                 </div>
                                                 <FormControl
                                                     name="fromdate"
@@ -191,9 +210,9 @@ class AcademicInfo extends Component {
                                                 />    
                                             </div>
                                           
-                                            <div className="col-md-6">
+                                            <div className="col-md-6 modal-field">
                                             <div>
-                                                <ControlLabel>To</ControlLabel>
+                                                <ControlLabel>* Year Graduated</ControlLabel>
                                                 {"     "}
                                             </div>
                                             <FormControl
@@ -211,22 +230,11 @@ class AcademicInfo extends Component {
 
 
                                         <div className="row">
-                                            <div className="col-md-6">
-                                                <div>
-                                                    <ControlLabel>Major</ControlLabel>{' '}
-                                                </div>
-                                                <FormControl
-                                                    name="major"
-                                                    type="text"
-                                                    placeholder="Please Specify"
-                                                    onChange = {this.fillValues}
-
-                                                />    
-                                            </div>
+                                         
                                           
-                                            <div className="col-md-6">
+                                            <div className="col-md-6 modal-field">
                                             <div>
-                                                <ControlLabel>CGPA/Grades</ControlLabel>
+                                                <ControlLabel>* CGPA/Grades</ControlLabel>
                                                 {"     "}
                                             </div>
                                             <FormControl
@@ -241,22 +249,24 @@ class AcademicInfo extends Component {
                                     </FormGroup>
                                     
                                 </Form>
+                                
                                 </div>
 
-
-
-
-
+                                <div className="row">
+                                <div className="col-md-6">
+                                <section className="mandatory-note"><b>* All fields are mandatory</b></section>
+                                </div>
+                                <div className="save-button-container">
+                                <Button bsClass="normal-style-small" onClick={this.handleClose}>Cancel</Button>
+                                <Button bsClass="xavor-style-small" onClick={this.addRecord}>Save</Button>
+                                </div>
+                                </div>
+                               
                                 </Modal.Body>
-                                <Modal.Footer>
-                                        <section className="mandatory-note"><b>* All fields are mandatory</b></section>
-                                    <Button onClick={this.handleClose}>Close</Button>
-                                    <Button bsClass="xavor-style" onClick={this.addRecord}>Save changes</Button>
-                                    
-                                </Modal.Footer>
+                                
                             </Modal>
-                        </h4>
-                    </div>
+                    
+                    
                     <ReactTable
                         className="data-table"
                         data={this.state.records}
@@ -270,7 +280,7 @@ class AcademicInfo extends Component {
                     
                 </div>
                
-                
+                </div>
             </Aux>
 
         );

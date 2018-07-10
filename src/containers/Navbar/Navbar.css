@@ -1,14 +1,17 @@
 .header-wrapper{
     overflow: hidden;
+    
     border-bottom: 2px solid #c3c3c3;
     background-color: #F3F3F4;
 }
 .image-container{
     width:13%;
+    padding-top: 10px;
+    padding-bottom: 10px;
     float: left;
     margin-left: auto;
     margin-right: auto;
-    background-color: #c3c3c3;
+    background-color: white;
 
    
 }
@@ -20,8 +23,10 @@
 }
 .header-content{
     width: 87%;
+    position: relative;
+    top:46px;
     float: right;
     text-align: left;
-    margin-top: 2%;
+    padding-right: 20px;
     font-size: 16px;
 }

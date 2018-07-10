@@ -1,8 +1,8 @@
 #main{
     float: right;
     width: 87%;
-    height:  -moz-available;          /* WebKit-based browsers will ignore this. */
-    height:  -webkit-fill-available;
+    height:  87vh;          /* WebKit-based browsers will ignore this. */
+    overflow: auto;
     background-color: #F3F3F4;
 }
 .bread-crumb{
@@ -14,33 +14,36 @@
     height: 40px;
 }
 .content-body{
-    background-color: #F3F3F4;
-    height:  -moz-available;          /* WebKit-based browsers will ignore this. */
-    height:  -webkit-fill-available;
+    background-color: white;
+}
+.side-menu{
+    text-align: left;
 }
 .greeting-statement{
     float: right;
 }
+
+
 span{
     margin-right: 10px;
     margin-left: 5px;
 }
-.search-bar{
-    float: right;
-}
+
 .admin-tools{
     height:40px;
     background-color: white;
+    border-bottom: 2px solid #F3F3F4;
 }
 .add-button{
     float: right;
     width: 170px;
     margin-top: 10px;
+    margin-right:10px;
 }
 .search-bar{
-    float:right;
-    margin-right: 20px;
-    width: 30%;
+    float: right;
+    margin-right:5px;
+    width: auto;
     margin-top:5px;
 }
 .search-box{
@@ -62,7 +65,7 @@ span{
 .search-button{
     height: 30px;
     padding: 6px 10px;
-    margin-bottom: 0;
+    margin-bottom: 3px;
     margin-left:1px;
     font-size: 14px;
     font-weight: 400;
@@ -80,4 +83,43 @@ span{
     background-image: none;
     border: 1px solid transparent;
     border-radius: 4px;
+}
+.table-action{
+    background-color: #f4c12b;
+    color:white;
+    margin-left: 1%;
+        display: inline-block;
+        padding: 2px 2px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 4px;
+}
+.table-grid{
+    text-align: left;
+}
+.table-header-grid{
+    text-align: left;
+    font-weight: bold;
+}
+.admin-modal-fields{
+    margin-bottom: 10px !important;
+}
+.ReactTable .rt-th,
+.ReactTable .rt-td{
+    padding: 0px !important;
+    margin: 6px !important;
 }
