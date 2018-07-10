@@ -254,7 +254,7 @@ class AcademicInfo extends Component {
 
                                 <div className="row">
                                 <div className="col-md-6">
-                                <section className="mandatory-note-academic"><b>* All fields are mandatory</b></section>
+                                <section className="mandatory-note"><b>* All fields are mandatory</b></section>
                                 </div>
                                 <div className="save-button-container">
                                 <Button bsClass="normal-style-small" onClick={this.handleClose}>Cancel</Button>

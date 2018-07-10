@@ -4,7 +4,6 @@ import Sidemenu from './SideMenu/SideMenu';
 import Navbar from '../Navbar/Navbar';
 import { Switch, Route, Link} from 'react-router-dom';
 import AdminHome from './AdminHome/AdminHome';
-import AddQuestion from './ManageQuestion/AddQuestion/AddQuestion';
 import ManageSection from './ManageSection/ManageSection';
 import ManageQuestion from './ManageQuestion/ManageQuestion';
 import ManageCandidate from './ManageCandidate/ManageCandidate';
@@ -60,7 +59,7 @@ class AdminPortal extends Component{
                     <Route exact path={`/admin-portal/home/manage-questions/`} component={ManageQuestion} />
                     <Route exact path={`/admin-portal/home/manage-candidates/`} component={ManageCandidate} />
                     <Route exact path={`/admin-portal/home/manage-candidates/candidate-details/`} component={CandidateDetails} />
-                    <Route exact path={`/admin-portal/home/manage-questions/add-question/`} component={AddQuestion} />
+                    
                     
             </Switch>
                 </div>

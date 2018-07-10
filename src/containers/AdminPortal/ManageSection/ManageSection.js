@@ -20,22 +20,37 @@ class ManageSection extends Component {
           {
             Header: "Section Name",
             accessor: "name",
+            minWidth: 100, // A minimum width for this column. If there is extra room, column will flex to fill available space (up to the max-width, if set)
+            maxWidth: 150,
             headerClassName: "table-header-grid",
             show: true
           },
           {
             Header: "Description",
             accessor: "description",
+            minWidth: 900, // A minimum width for this column. If there is extra room, column will flex to fill available space (up to the max-width, if set)
+            maxWidth: 950,
             headerClassName: "table-header-grid",
             show: true
           },
           {
             Header: "Action",
             headerClassName: "table-header-grid",
+            minWidth: 120, // A minimum width for this column. If there is extra room, column will flex to fill available space (up to the max-width, if set)
+            maxWidth: 121,
             Cell: row => (
               <div>
-                <Button bsStyle="link" onClick={this.handleEditOperation}>Edit</Button>
-                <Button bsStyle="link" onClick={this.handleDeleteOperation}>Delete</Button>
+              <span>
+              
+              <a onClick={this.handleEditOperation}>Edit</a>
+              
+              </span>
+              
+              <span>
+              <a onClick={this.handleDeleteOperation}>Delete</a>
+              </span>
+                
+                
               </div>
             )
           }
@@ -65,22 +80,36 @@ class ManageSection extends Component {
                 </Breadcrumb>
                 <div className="content-body">
                     <div className="admin-tools">
-                    <div className="add-button">
-                            <span className="glyphicon glyphicon-plus"></span>
-                            <a onClick={this.handleShow}>  Add a new section...</a>
-                            <Modal dialogClassName="section-modal" bsSize="large" className="Popup" show={this.state.show} onHide={this.handleClose}>
+                   
+                             {/****************************************Search Bar*************************************/}
+                    <div className="search-bar">
+                    <form>
+                        <input className="search-box" name="search" placeholder="Search..."/>
+                        <button className="search-button">
+                            <i className="fas fa-search"></i>
+                        
+                        </button>
+                    </form>
+                </div>
+                {/****************************************Search Bar*************************************/}
+                <div className="add-button">
+                <span className="glyphicon glyphicon-plus"></span>
+                <a onClick={this.handleShow}>  Add a new section</a>
+                </div>
+                </div>
+                            <Modal show={this.state.show} onHide={this.handleClose}>
                                 <Modal.Header closeButton>
                                     <Modal.Title><b>Add new section</b></Modal.Title>
                                 </Modal.Header>
                                 <Modal.Body>
-                                    <div className="container-fluid">
-                                        <Form className="academic-info">
+                                    
+                                        <Form>
                                             <FormGroup controlId="formBasicText">
 
-                                                <div className="row">
+                                                <div className="row admin-modal-fields">
                                                     <div className="col-md-6">
                                                         <div>
-                                                            <ControlLabel>Name</ControlLabel>{' '}
+                                                            <ControlLabel>* Name</ControlLabel>{' '}
                                                         </div>
                                                         <FormControl
                                                             name="section-name"
@@ -90,9 +119,9 @@ class ManageSection extends Component {
                                                         />
                                                     </div>
 
-                                                    <div className="col-md-6">
+                                                    <div className="col-md-6 admin-modal-fields">
                                                         <div>
-                                                            <ControlLabel>Number of Questions to list</ControlLabel>{' '}
+                                                            <ControlLabel>* Number of Questions to list</ControlLabel>{' '}
                                                         </div>
                                                         <FormControl
                                                             name="questions-to-list"
@@ -104,11 +133,7 @@ class ManageSection extends Component {
                                                 </div>
 
 
-
-
-
-
-                                                <div className="row">
+                                                <div className="row admin-modal-fields">
 
                                                     <div className="col-md-12">
                                                         <div>
@@ -128,35 +153,25 @@ class ManageSection extends Component {
 
                                         </Form>
                                         <div className="row">
-                                        
-                                        <div className="col-md-6">
-                                        <section className="mandatory-note"><b>* All fields are mandatory</b></section>
+                                        <div className="col-md-8">
+                                        <section className="mandatory-note"><b>Note: All Fields marked with * are mandatory</b></section>
                                         </div>
-                                        <div className="col-md-6 ">
-                                        <Button bsClass="xavor-style save-button" onClick={this.handleClose}>Save changes</Button>
+                                        <div className="col-md-4">
+                                        <Button bsClass="normal-style-small" onClick={this.handleClose}>Cancel</Button>
+                                        <Button bsClass="xavor-style-small" onClick={this.handleClose}>Save</Button>
                                         </div>
                                         </div>
-                                    </div>
+                                    
 
 
 
 
 
                                 </Modal.Body>
+                                
                             </Modal>
-                    </div>
-                     {/****************************************Search Bar*************************************/}
-                    <div className="search-bar">
-                        <form>
-                            <input className="search-box" name="search" placeholder="Search..."/>
-                            <button className="search-button">
-                                <i className="fas fa-search"></i>
-                            
-                            </button>
-                        </form>
-                    </div>
-                    {/****************************************Search Bar*************************************/}
-                    </div>
+           
+                    
                     <div className="tabular-data">
                         <ReactTable 
                         className="table-grid"

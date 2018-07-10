@@ -16,16 +16,15 @@ class RichTextEditor extends Component {
       <ReactSummernote
         value="Default value"
         options={{
-          height: 150,
+          height: 50,
           dialogsInBody: true,
           toolbar: [
             ['style', ['style']],
             ['font', ['bold', 'underline', 'clear']],
-            ['fontname', ['fontname']],
             ['para', ['ul', 'ol', 'paragraph']],
-            ['table', ['table']],
-            ['insert', ['link', 'picture', 'video']],
-            ['view', ['fullscreen', 'codeview']]
+           
+          
+            ['view', [ 'codeview']]
           ],
           codemirror: {
             theme: 'monokai'

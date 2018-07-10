@@ -1,7 +1,7 @@
 #main{
     float: right;
     width: 87%;
-    height:  90vh;          /* WebKit-based browsers will ignore this. */
+    height:  87vh;          /* WebKit-based browsers will ignore this. */
     overflow: auto;
     background-color: #F3F3F4;
 }
@@ -15,7 +15,6 @@
 }
 .content-body{
     background-color: white;
-    height:  fit-content;
 }
 .side-menu{
     text-align: left;
@@ -23,6 +22,8 @@
 .greeting-statement{
     float: right;
 }
+
+
 span{
     margin-right: 10px;
     margin-left: 5px;
@@ -37,10 +38,11 @@ span{
     float: right;
     width: 170px;
     margin-top: 10px;
+    margin-right:10px;
 }
 .search-bar{
     float: right;
-
+    margin-right:5px;
     width: auto;
     margin-top:5px;
 }
@@ -112,4 +114,12 @@ span{
 .table-header-grid{
     text-align: left;
     font-weight: bold;
+}
+.admin-modal-fields{
+    margin-bottom: 10px !important;
+}
+.ReactTable .rt-th,
+.ReactTable .rt-td{
+    padding: 0px !important;
+    margin: 6px !important;
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Aux from '../../Auxilary/Auxilary';
-import { Breadcrumb, Button} from 'react-bootstrap';
+import { Breadcrumb} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import ReactTable from 'react-table';
 import './ManageCandidate.css';
@@ -60,7 +60,7 @@ class ManageCandidate extends Component{
             Cell: row => (
                 <div>
                 <Link to="/admin-portal/home/manage-candidates/candidate-details">
-                <Button bsStyle="link">view</Button>
+                View
                 </Link>
                 </div>
             )
