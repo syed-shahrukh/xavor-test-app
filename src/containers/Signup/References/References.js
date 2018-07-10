@@ -4,7 +4,7 @@ import { Modal, Button, FormControl, FormGroup, Form, ControlLabel, Radio } from
 import ReactTable from "react-table";
 import 'react-table/react-table.css';
 import './References.css';
-import { ToastContainer, toast } from 'react-toastify';
+
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -81,9 +81,7 @@ class References extends Component {
         console.log("Showing values of all records array from state: \n");
         console.log(this.state.records);
         this.handleClose();
-        toast.success("Record Added Successfully !", {
-            position: toast.POSITION.BOTTOM_RIGHT
-          });
+      
         
 
     }
@@ -94,41 +92,52 @@ class References extends Component {
         /*********************************************Columns/Headings****************************************************/ 
         const columns = [{
             Header: 'Name',
+            headerClassName: "table-header-grid",
             accessor: 'name' // String-based value accessors!
         },{
             Header: 'Telephone',
+            headerClassName: "table-header-grid",
             accessor: 'telephone' // String-based value accessors!
         },
         {
             Header: 'Relationship to you',
+            headerClassName: "table-header-grid",
             accessor: 'relationship'
         },
         {
             Header: 'Years they have known you',
+            headerClassName: "table-header-grid",
             accessor: 'yearsknown',
 
         },
         {
             Header: 'Notified?',
+            headerClassName: "table-header-grid",
             accessor: 'notified'
         }
         ]
         return (
-            <Aux>
-                <div className="container-fluid">
-                    <div className="add-button">
-                        <h4>
-                            <span className="glyphicon glyphicon-plus"></span>
-                            <a onClick={this.handleShow}>  Add a new record...</a>
+            <Aux>   
+                    <div className="references-wrap">
+                    <div className="references-heading">
+                    
+
+                    <div className="reference-add-record-button">
+                        <span className="glyphicon glyphicon-plus"></span>
+                        <a onClick={this.handleShow}>  Add a new reference</a>
+                    </div>
+                    </div>
+                            
                             <Modal dialogClassName="references-modal" className="Popup" show={this.state.show} onHide={this.handleClose}>
                                 <Modal.Header closeButton>
-                                    <Modal.Title><b>Add new record...</b></Modal.Title>
+                                    <Modal.Title><b>Add new reference</b></Modal.Title>
                                 </Modal.Header>
                                 <Modal.Body>
+                                <div className="container-fluid references-modal-body">
                                 <Form className="academic-info">
                                     <FormGroup controlId="formBasicText">
                                         <div className="row">
-                                            <div className="col-md-6">
+                                            <div className="col-md-6 references-field">
                                                 <div>
                                                     <ControlLabel>Name</ControlLabel>{' '}
                                                 </div>
@@ -139,7 +148,7 @@ class References extends Component {
                                                     onChange = {this.fillValues}
                                                 />    
                                             </div>
-                                            <div className="col-md-6">
+                                            <div className="col-md-6 references-field">
                                             <div>
                                                 <ControlLabel>Relationship to you</ControlLabel>
                                                 {"     "}
@@ -154,7 +163,7 @@ class References extends Component {
                                         </div>
 
                                         <div className="row">
-                                            <div className="col-md-6">
+                                            <div className="col-md-6 references-field">
                                                 <div>
                                                     <ControlLabel>Telephone</ControlLabel>{' '}
                                                 </div>
@@ -165,7 +174,7 @@ class References extends Component {
                                                     onChange = {this.fillValues}
                                                 />    
                                             </div>
-                                            <div className="col-md-6">
+                                            <div className="col-md-6 references-field">
                                             <div>
                                                 <ControlLabel>Years they have known you</ControlLabel>
                                                 {"     "}
@@ -186,7 +195,7 @@ class References extends Component {
 
 
                                         <div className="row">
-                                            <div className="col-md-12">
+                                            <div className="col-md-12 references-field">
                                                 <div>
                                                     <ControlLabel>Have they been notified that we will contact them for verification?</ControlLabel>{' '}
                                                 </div>
@@ -208,20 +217,20 @@ class References extends Component {
                                     
                                 </Form>
 
+                                </div>
 
-
-
-
+                                <div className="row">
+                                <div className="col-md-6">
+                                <section className="mandatory-note"><b>* All fields are mandatory</b></section>
+                                </div>
+                                <div className="references-save-button-container">
+                                <Button bsClass="normal-style-small" onClick={this.handleClose}>Cancel</Button>
+                                <Button bsClass="xavor-style-small" onClick={this.addRecord}>Save</Button>
+                                </div>
+                                </div>
                                 </Modal.Body>
-                                <Modal.Footer>
-                                        <section className="mandatory-note"><b>* All fields are mandatory</b></section>
-                                    <Button onClick={this.handleClose}>Close</Button>
-                                    <Button bsClass="xavor-style" onClick={this.addRecord}>Save changes</Button>
-                                    
-                                </Modal.Footer>
                             </Modal>
-                        </h4>
-                    </div>
+                    <div className="container-fluid">
                     <ReactTable
                         className="data-table"
                         data={this.state.records}
@@ -232,9 +241,9 @@ class References extends Component {
                 <Button href="/account-type" className="finish-signup-button" bsClass="xavor-style">Signup</Button>
                 <Button className="to-previous" bsClass="xavor-style" onClick={this.props.prev}>Previous</Button>
                 </div>
+                </div>
                     
                 </div>
-               <ToastContainer/>
                 
             </Aux>
 

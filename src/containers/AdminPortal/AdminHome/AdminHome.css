@@ -5,6 +5,9 @@
     display: block;
     text-align: left;
 }
-.active span{
+.current-node{
     color: #f4c12b;
+}
+.demonstration{
+    margin-top:5px;
 }

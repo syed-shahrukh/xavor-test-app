@@ -7,6 +7,7 @@ import AdminHome from './AdminHome/AdminHome';
 import ManageSection from './ManageSection/ManageSection';
 import ManageQuestion from './ManageQuestion/ManageQuestion';
 import ManageCandidate from './ManageCandidate/ManageCandidate';
+import CandidateDetails from './ManageCandidate/CandidateDetails/CandidateDetails';
 import './AdminPortal.css';
 
 
@@ -46,7 +47,6 @@ class AdminPortal extends Component{
                 <Sidemenu 
                     changeContent = {this.setContentId}
                 marginLeft={this.state.marginLeft}
-                class={this.state.class}
                 isOpen={this.state.isOpen}
                 click={this.openSidebar}/>
 
@@ -55,9 +55,12 @@ class AdminPortal extends Component{
                
                 <Switch>
                     <Route exact path={`/admin-portal/home/`} component={AdminHome} />
-                    <Route exact path={`/admin-portal/home/manage-sections`} component={ManageSection} />
-                    <Route exact path={`/admin-portal/home/manage-questions`} component={ManageQuestion} />
-                    <Route exact path={`/admin-portal/home/manage-candidates`} component={ManageCandidate} />
+                    <Route exact path={`/admin-portal/home/manage-sections/`} component={ManageSection} />
+                    <Route exact path={`/admin-portal/home/manage-questions/`} component={ManageQuestion} />
+                    <Route exact path={`/admin-portal/home/manage-candidates/`} component={ManageCandidate} />
+                    <Route exact path={`/admin-portal/home/manage-candidates/candidate-details/`} component={CandidateDetails} />
+                    
+                    
             </Switch>
                 </div>
                 

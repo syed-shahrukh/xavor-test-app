@@ -4,6 +4,8 @@ img {
 }
 .wrap{
   background-color: #F3F3F4;
+  overflow: hidden;
+  height: 100%;
 }
 .dialogue-title{
   border-bottom: 2px solid black;
@@ -26,7 +28,7 @@ img {
     margin-left: 20%;
     margin-top: 10%;  
     padding-bottom: 1%;
-    width: 50%;
+   width: 50%;
     background-color: white;
 }
 .login-form{
@@ -41,7 +43,7 @@ img {
     left: 50%;
     height: 500px;
     border-right: 2px solid black;
-    width: 0%;
+    /* width: 0%; */
     
 }
 .signup-window{
@@ -53,16 +55,19 @@ img {
   padding-bottom: 1%;
   border: 2px solid black;
   padding-bottom: 1%;
-    width: 50%;
+    width: 50%; 
     background-color: white;
 }
 .empty-parent-login{
   width: 50%;
+
+
   align-content: center;
   float:left;
 }
 .empty-parent-signup{
-  width: 50%;
+   width: 50%;  
+
   align-content: center;
   float:right;
 }

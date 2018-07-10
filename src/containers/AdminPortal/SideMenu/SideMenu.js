@@ -20,11 +20,11 @@ class Sidemenu extends Component{
             <Aux>
                 <div id="mySidenav" className="sidenav" >
                 
-                <Link to='manage-sections' className={this.state.activeKey === '1' ? "currentlyactive" : ""} onClick={() => {this.setActiveKey('1')}} >Manage Sections</Link>
+                <Link to='/admin-portal/home/manage-sections' className={this.state.activeKey === '1' ? "currentlyactive" : ""} onClick={() => {this.setActiveKey('1')}} >Manage Sections</Link>
                 
-                <Link  to="manage-questions" className={this.state.activeKey === '2' ? "currentlyactive" : ""} onClick={() => {this.setActiveKey('2')}} >Manage Questions</Link>
-                <Link to="manage-candidates" className={this.state.activeKey === '3' ? "currentlyactive" : ""} onClick={() => {this.setActiveKey('3')}} >Manage Candidates</Link>
-                <Link to="settings" className={this.state.activeKey === '4' ? "active" : ""} onClick={() => {this.setActiveKey('4')}} >Settings</Link>
+                <Link  to="/admin-portal/home/manage-questions" className={this.state.activeKey === '2' ? "currentlyactive" : ""} onClick={() => {this.setActiveKey('2')}} >Manage Questions</Link>
+                <Link to="/admin-portal/home/manage-candidates" className={this.state.activeKey === '3' ? "currentlyactive" : ""} onClick={() => {this.setActiveKey('3')}} >Manage Candidates</Link>
+                <a href="/admin-portal/settings" className={this.state.activeKey === '4' ? "active" : ""} onClick={() => {this.setActiveKey('4')}} >Settings</a>
                 
                 </div>
 
