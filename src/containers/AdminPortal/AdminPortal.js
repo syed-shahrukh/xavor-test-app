@@ -54,12 +54,10 @@ class AdminPortal extends Component{
                 
                
                 <Switch>
-<<<<<<< HEAD
                  
                     <Route exact path={`/manage-sections`} component={ManageSection} />
                     <Route exact path={`/manage-questions`} component={ManageQuestion} />
                     <Route exact path={`/manage-candidates`} component={ManageCandidate} />
-=======
                     <Route exact path={`/admin-portal/home/`} component={AdminHome} />
                     <Route exact path={`/admin-portal/home/manage-sections/`} component={ManageSection} />
                     <Route exact path={`/admin-portal/home/manage-questions/`} component={ManageQuestion} />
@@ -67,7 +65,6 @@ class AdminPortal extends Component{
                     <Route exact path={`/admin-portal/home/manage-candidates/candidate-details/`} component={CandidateDetails} />
                     
                     
->>>>>>> e3b2c06f7c74828705af84ed41fa240950b86743
             </Switch>
                 </div>
                 

@@ -1,0 +1,44 @@
+.test-window{
+    width:90%;
+    overflow: hidden;
+    margin-left:5%;
+    margin-right:5%;
+    margin-top:1%;
+    border: 2px solid black;
+    
+    
+}
+.next-question-button-container{
+    border-top: 2px solid black;
+    width:100%;
+    text-align: right;
+    padding: 10px 10px;
+}
+.test-question-statement{
+    text-align: left;
+    overflow: hidden;
+    padding-left: 15px;
+}
+.question-options{
+    margin-top: 50px;
+    padding-left: 18px;
+    text-align: left;
+
+}
+.question-timer{
+    width: 90%;
+    margin-left:5%;
+    margin-right:5%;
+    margin-bottom: 1%;
+    margin-top:1%;
+}
+.question-number{
+    float:left;
+    text-align: left;
+    width:40%;
+}
+.test-timer{
+    float:right;
+    text-align: right;
+    width:40%;
+}
