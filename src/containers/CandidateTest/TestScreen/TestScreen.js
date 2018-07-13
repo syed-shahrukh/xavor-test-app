@@ -10,41 +10,44 @@ class TestScreen extends Component{
     state = {
         total_questions:60,
         current_question:1,
-        time: 5,
-        minutes: null,
-        seconds: null
+        time: 8
     };
     changeQuestion = () => {
         const question = this.state.current_question;
         this.setState({current_question: question+1});
     };
-    componentDidMount(){
+    startTimer() {
         const self = this;
-        
-        
-       let timer = setInterval(function() {
-            const newTime = self.state.time -1;
-            const minute = Math.floor(self.state.time/60);
-            const second = ("0" + self.state.time%60).slice(-2);
-            self.setState({minutes: minute, seconds: second, time: newTime},() =>{
-                console.log("Value of state Time: " + self.state.time);
-            });
-            
-          
-        }, 1000)
+        let timer = setInterval(function() {
+            self.setState(({ time }) => ({
+                time: time - 1,
+                
+            }));
+            console.log("Value of state time: " + self.state.time );
+            if(self.state.time === -1){
+                clearInterval(timer);
+            }           
+          }, 1000)
     }
-   
+    componentDidMount(){
+        this.startTimer();
+        
+        
+       
+    }
+    
     render(){
         
         return(
             <Aux>
+               
                 <div className="question-timer">
                     <div className="question-number">
                         <h3>Question {this.state.current_question}/{this.state.total_questions}</h3>
                     </div>
                     <div className="test-timer">
-                        {this.state.time === 0 ?  <Redirect to='/' /> : console.log("Some Error Occured")}
-                        <h3>{this.state.minutes}:{this.state.seconds}</h3>
+                        {this.state.time === -1 ?  <Redirect to='/' /> : console.log("Some Error Occured")}
+                        <h3>{Math.floor(this.state.time/60) }:{("0"+this.state.time%60).slice(-2) }</h3>
                     </div>
                 </div>
                 <div className="test-window">
